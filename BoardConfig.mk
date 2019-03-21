@@ -19,7 +19,10 @@ LOCAL_PATH := device/zte/p809a20
 TARGET_BOARD_PLATFORM := msm8909
 TARGET_BOOTLOADER_BOARD_NAME := p809a20
 
-# Recovery
+#Shrink
+BOARD_KERNEL_LZ4C_DT := true
+LZMA_RAMDISK_TARGETS := boot,recovery
+#Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 18571264
 BOARD_FLASH_BLOCK_SIZE := 0
@@ -30,6 +33,7 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+
 include $(LOCAL_PATH)/kernel.mk
 include device/generic/twrpbuilder/BoardConfig32.mk
 
